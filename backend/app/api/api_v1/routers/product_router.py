@@ -1,5 +1,7 @@
 from typing import Any
 
+from sqlalchemy import Integer
+
 from app.api import deps
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
@@ -19,5 +21,5 @@ def create_product(*, db: Session = Depends(deps.get_db), obj_in: ProductCreate)
 @router.get('/{id}')
 def get_product(*, db: Session = Depends(deps.get_db), id: int) -> Any:
     product = product_crud.get(db, id=id)
-    print(product.category.name)
+    print(db.query(ProductModel.detail.op('->>')('color')).filter(ProductModel.detail.op('->>')('color').cast(Integer) == 1).all())
     return product
