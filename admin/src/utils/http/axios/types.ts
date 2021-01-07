@@ -1,10 +1,10 @@
-import type { AxiosRequestConfig } from 'axios'
+import type { AxiosRequestConfig } from "axios";
 // import { AxiosTransform } from './axiosTransform';
 
-export type ErrorMessageMode = 'none' | 'modal' | 'message' | undefined
+export type ErrorMessageMode = "none" | "modal" | "message" | undefined;
 
 export interface IRequestOptions {
-	// 请求参数拼接到url
+  // 请求参数拼接到url
   joinParamsToUrl?: boolean;
   // 格式化请求参数时间
   formatDate?: boolean;
@@ -21,21 +21,20 @@ export interface IRequestOptions {
 }
 
 export interface ICreateAxiosOptions extends AxiosRequestConfig {
-	prefixUrl?: string;
+  prefixUrl?: string;
   // transform?: AxiosTransform;
   requestOptions?: IRequestOptions;
 }
 
 export interface IResult<T = any> {
-	code: number;
-  type: 'success' | 'error' | 'warning';
+  code: number;
+  type: "success" | "error" | "warning";
   message: string;
   result: T;
 }
 
 export interface IUploadFileParams {
-	// 其他参数
-	// Indexable接口在哪?
+  // 其他参数
   data?: Indexable;
   // 文件参数的接口字段名
   name?: string;
