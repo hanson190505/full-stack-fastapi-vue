@@ -1,7 +1,7 @@
-import type { AxiosRequestConfig } from "axios";
-// import { AxiosTransform } from './axiosTransform';
+import type { AxiosRequestConfig } from 'axios';
+import { AxiosTransform } from './axiosTransform';
 
-export type ErrorMessageMode = "none" | "modal" | "message" | undefined;
+export type ErrorMessageMode = 'none' | 'modal' | 'message' | undefined;
 
 export interface IRequestOptions {
   // 请求参数拼接到url
@@ -22,13 +22,13 @@ export interface IRequestOptions {
 
 export interface ICreateAxiosOptions extends AxiosRequestConfig {
   prefixUrl?: string;
-  // transform?: AxiosTransform;
+  transform?: AxiosTransform;
   requestOptions?: IRequestOptions;
 }
 
 export interface IResult<T = any> {
   code: number;
-  type: "success" | "error" | "warning";
+  type: 'success' | 'error' | 'warning';
   message: string;
   result: T;
 }

@@ -1,7 +1,7 @@
-import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from "axios";
-import axios from "axios";
-import { isFunction } from "@/utils/is";
-import type { IRequestOptions, ICreateAxiosOptions, IResult, IUploadFileParams } from "./types";
+import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios';
+import axios from 'axios';
+import { isFunction } from '@/utils/is';
+import type { IRequestOptions, ICreateAxiosOptions, IResult, IUploadFileParams } from './types';
 
 /**
  * @description: axios模块
@@ -21,6 +21,10 @@ export class VAxios {
    */
   private createAxios(config: ICreateAxiosOptions): void {
     this.axiosInstance = axios.create(config);
+  }
+  private getTransform() {
+    const { transform } = this.options;
+    return transform;
   }
   getAxios(): AxiosInstance {
     return this.axiosInstance;
@@ -44,6 +48,21 @@ export class VAxios {
     Object.assign(this.axiosInstance.defaults.headers, header);
   }
 
+  /**
+   * @description: 拦截器配置
+   */
+  private setupInterceptors() {
+    const transform = this.getTransform();
+    if (!transform) {
+      return;
+    }
+    const {
+      requestInterceptors,
+      responseInterceptor,
+      requestInterceptorsCatch,
+      responseInterceptorsCatch
+    } = transform;
+  }
   /**
    * @description: 请求方法
    */

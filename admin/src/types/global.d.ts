@@ -1,3 +1,3 @@
 declare type Indexable<T extends any = any> = {
-    [key: string]: T
-}
+  [key: string]: T;
+};

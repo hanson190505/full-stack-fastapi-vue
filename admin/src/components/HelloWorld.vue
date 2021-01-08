@@ -15,21 +15,19 @@ import { Options, Vue } from 'vue-class-component';
     msg: String
   }
 })
-
 export default class HelloWorld extends Vue {
-  msg!: string
-  data_list = {}
-  async getData () {
-    this.data_list = await fetch('http://localhost:8000/api/v1/product/').then(res=>{
-      return res.json()
-    })
-    console.log(this.data_list)
+  msg!: string;
+  data_list = {};
+  async getData() {
+    this.data_list = await fetch('http://localhost:8000/api/v1/product/').then((res) => {
+      return res.json();
+    });
   }
   mounted() {
-    this.getData()
+    // this.getData()
   }
   created() {
-    console.log('is created')
+    console.log('is created');
   }
 }
 </script>
