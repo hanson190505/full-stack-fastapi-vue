@@ -1,5 +1,5 @@
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { ICreateAxiosOptions, IRequestOptions, iResult } from "@/utils/http/axios/types";
+import { ICreateAxiosOptions, IRequestOptions, IResult } from "@/utils/http/axios/types";
 import axios from "axios";
 import { cloneDeep } from "lodash-es";
 import { isFunction } from "@/utils/is";
@@ -51,7 +51,7 @@ export class VAxios {
       conf = beforeRequestHook(conf, opt)
     }
     return new Promise((resolve, reject) => {
-      this.axiosInstance.request<any, AxiosResponse<iResult>>(conf).then((res: AxiosResponse<iResult>) => {
+      this.axiosInstance.request<any, AxiosResponse<IResult>>(conf).then((res: AxiosResponse<IResult>) => {
         if (transformRequestData && isFunction(transformRequestData)){
           const ret = transformRequestData(res, opt);
           ret !== errorResult ? resolve(ret) : reject(new Error('request error!'));

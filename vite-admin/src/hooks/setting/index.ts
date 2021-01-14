@@ -1,5 +1,5 @@
 import { GlobConfig, GlobEnvConfig } from "@/types/config";
-import { getShortName } from "../../../build/getShortName";
+import { getShortName } from "../../../builder/getShortName";
 import { getGlobEnvConfig, isDevMode } from "@/utils/env";
 
 const ENV_NAME = getShortName(import.meta.env)

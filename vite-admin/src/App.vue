@@ -1,20 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <img alt="Vue logo" src="./assets/logo.png"/>
+  <HelloWorld msg="Hello Vue 3 + Vite"/>
   <el-button type="info" @click="handleClick">hanson</el-button>
-  <products/>
+  <suspense>
+    <products/>
+  </suspense>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onErrorCaptured } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Products from "@/views/products/index.vue";
+
 export default defineComponent({
   name: 'App',
   components: {
     Products,
     HelloWorld
   },
+  setup(){
+    onErrorCaptured((err,ins,info) => {
+      console.log(err)
+      console.log('=======')
+      console.log(ins)
+      console.log('=======')
+      console.log(info)
+      return false
+    })
+  }
 })
 </script>
 

@@ -2,7 +2,7 @@ import type { UserConfig, ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { loadEnv } from "vite";
-import { wrapperEnv } from "./build/utils";
+import { wrapperEnv } from "./builder/utils";
 
 function pathResolve(dir: string) {
   return resolve(__dirname, '.', dir)

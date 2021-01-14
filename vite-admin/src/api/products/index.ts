@@ -1,10 +1,10 @@
 import { defHttp } from "@/utils/http/axios";
 
 enum Api {
-  Product= '/product/'
+  Product= '/produc/'
 }
 
-export function getProducts(){
+export function getProductsAPI(){
   return defHttp.request(
     {
       url:Api.Product,

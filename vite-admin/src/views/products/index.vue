@@ -3,20 +3,24 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from "vue";
-import { getProducts } from "@/api/products";
+import { defineComponent } from "vue";
+import { handleProductsApi } from "@/hooks/product";
+import { getProductsAPI } from "@/api/products";
 
 export default defineComponent({
-  name:'products',
-  setup(){
-    const products = getProducts().then(data=>{
-      console.log(data)
-    })
+  name: 'products',
+  // setup本身是一个函数,因此可以用async-await的方法取一个Promise的返回值
+  // 比如封装的axios请求结果
+  async setup() {
+    const {getProducts} = handleProductsApi()
+    // const pp = getProductsAPI()
+    const products = await getProducts()
     return {
       products
     }
   }
 })
+
 </script>
 
 <style scoped>

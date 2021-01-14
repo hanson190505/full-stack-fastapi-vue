@@ -1,10 +1,12 @@
 {
   "name": "vite-admin",
   "version": "0.0.0",
+  "description": "hanson",
+  "license": "",
   "scripts": {
     "serve": "vite --mode=development",
     "dev": "vite",
-    "build": "vuedx-typecheck . && vite build"
+    "build": "vuedx-typecheck . && vite builder"
   },
   "dependencies": {
     "axios": "^0.21.1",

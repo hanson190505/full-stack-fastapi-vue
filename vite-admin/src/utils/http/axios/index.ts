@@ -27,13 +27,10 @@ const transform: AxiosTransform = {
     //   return errorResult
     // }
     const {status, data, statusText} = res
-    const hasSuccess = data && statusText === ResultEnum.SUCCESS
-    if (!hasSuccess){
-
-    }
     if (statusText === ResultEnum.SUCCESS) {
       return data
     }
+    return res.data
   },
   beforeRequestHook(config: AxiosRequestConfig, options: IRequestOptions) {
     const { apiUrl, joinPrefix, joinParamsToUrl, formatDate, joinTime = true } = options;
