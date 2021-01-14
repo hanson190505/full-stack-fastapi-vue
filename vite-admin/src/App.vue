@@ -2,25 +2,19 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + Vite" />
   <el-button type="info" @click="handleClick">hanson</el-button>
+  <products/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue'
-const SET_TO:string = 'SET_TO'
+import Products from "@/views/products/index.vue";
 export default defineComponent({
   name: 'App',
   components: {
+    Products,
     HelloWorld
   },
-  methods:{
-    [SET_TO](){
-      console.log(123)
-    },
-    handleClick(){
-
-    }
-  }
 })
 </script>
 
