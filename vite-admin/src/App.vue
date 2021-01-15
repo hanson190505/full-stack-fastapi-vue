@@ -1,7 +1,8 @@
 <template>
   <suspense>
     <template #default>
-      <products/>
+      <router-view>
+      </router-view>
     </template>
     <template #fallback>
       {{error}}
@@ -12,10 +13,12 @@
 <script lang="ts">
 import { defineComponent, onErrorCaptured, ref } from 'vue'
 import Products from "@/views/products/index.vue";
+import Home from "@/views/home/index.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
+    Home,
     Products,
   },
   setup(){
