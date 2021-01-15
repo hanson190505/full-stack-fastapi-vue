@@ -13,7 +13,6 @@ const root: string = process.cwd();
 export default ({command, mode}: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root)
   const viteEnv = wrapperEnv(env)
-  console.log(viteEnv)
   const {VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE, VITE_LEGACY} = viteEnv;
   return {
     plugins: [vue()],
