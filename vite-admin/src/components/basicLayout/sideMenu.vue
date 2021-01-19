@@ -3,9 +3,9 @@
       :uniqueOpened="true"
       default-active="2"
       class="el-menu-vertical-demo"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
+      :background-color=backgroundColor
+      :text-color=textColor
+      :active-text-color=activeTextColor
       :router=true
   >
     <el-submenu :index="menu.name" v-for="menu in menus">
@@ -21,14 +21,19 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { BaseMenu } from "@/router/routes";
+import { menuStyle } from "@/style";
 
 export default defineComponent({
   name: "sideMenu",
   setup(){
     const menus = ref(BaseMenu)
-
+    const {backgroundColor, textColor, activeTextColor} = menuStyle
     return {
-      menus}
+      menus,
+      backgroundColor,
+      textColor,
+      activeTextColor
+    }
   }
 })
 </script>

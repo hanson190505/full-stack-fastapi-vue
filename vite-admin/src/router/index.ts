@@ -1,14 +1,16 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import type { App } from 'vue'
-import { baseRoute } from "@/router/routes";
+import { routes } from "@/router/routes";
+import { createGuard } from "@/router/guard";
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: baseRoute()
+  routes: routes
 });
 
 export function setupRouter(app: App<Element>) {
   app.use(router)
+  createGuard(router)
 }
 
 export default router

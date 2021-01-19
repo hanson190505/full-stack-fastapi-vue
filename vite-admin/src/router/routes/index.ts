@@ -41,3 +41,11 @@ export function baseRoute(): RouteRecordRaw[] {
   })
   return tempList
 }
+
+const loginRoute:RouteRecordRaw = {
+  name: 'login',
+  path: '/login',
+  component: () => import('@/views/login/index.vue')
+}
+
+export const routes = [...baseRoute(), loginRoute]

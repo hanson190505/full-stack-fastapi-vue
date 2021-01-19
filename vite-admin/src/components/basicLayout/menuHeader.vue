@@ -1,13 +1,17 @@
 <template>
-    <h1>menu-header</h1>
-
+    <div>
+      <h1>header-menu</h1>
+    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent( {
-  name: "menuHeader"
+  name: "menuHeader",
+  setup(){
+
+  }
 })
 </script>
 
