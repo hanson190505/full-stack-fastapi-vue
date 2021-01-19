@@ -24,12 +24,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, computed } from "vue";
 import { getProductsAPI } from "@/api/products";
 
 export default defineComponent({
   name: "productTable",
   async setup(){
+    // const data = ref(null)
+    // data.value = await getProductsAPI()
+    // return {
+    //   products: computed(()=>{
+    //     return data.value
+    //   })
+    // }
     const products = await getProductsAPI()
     return {
       products

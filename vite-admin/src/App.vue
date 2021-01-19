@@ -1,11 +1,10 @@
 <template>
   <suspense>
     <template #default>
-      <router-view>
-      </router-view>
+      <router-view/>
     </template>
     <template #fallback>
-      {{error}}
+      <h1>loading...</h1>
     </template>
   </suspense>
 </template>
@@ -21,15 +20,16 @@ export default defineComponent({
     Home,
     Products,
   },
-  setup(){
-    const error = ref('')
-    onErrorCaptured((err) => {
-      error.value = err.message
-      return true
-    })
-    return {
-      error
-    }
+  setup() {
+    // const error = ref('')
+    // onErrorCaptured((err) => {
+    //   error.value = err.message
+    //   console.log(error)
+    //   return true
+    // })
+    // return {
+    //   error
+    // }
   }
 })
 </script>
