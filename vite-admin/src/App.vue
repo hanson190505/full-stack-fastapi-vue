@@ -1,22 +1,28 @@
 <template>
-  <suspense>
-    <template #default>
-      <router-view/>
+  <basic-layout>
+    <template #mainContext>
+      <suspense>
+        <template #default>
+          <router-view/>
+        </template>
+        <template #fallback>
+          <h1>loading...</h1>
+        </template>
+      </suspense>
     </template>
-    <template #fallback>
-      <h1>loading...</h1>
-    </template>
-  </suspense>
+  </basic-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent, onErrorCaptured, ref } from 'vue'
 import Products from "@/views/products/index.vue";
 import Home from "@/views/home/index.vue";
+import BasicLayout from "@/components/basicLayout/index.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
+    BasicLayout,
     Home,
     Products,
   },
@@ -35,12 +41,5 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

@@ -1,20 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import type { App } from 'vue'
+import { baseRoute } from "@/router/routes";
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [
-    {
-      path: "/product",
-      name: 'product',
-      component: () => import('@/views/products/index.vue')
-    },
-    {
-      path: "/",
-      name: 'home',
-      component: () => import('@/views/home/index.vue')
-    }
-  ]
+  routes: baseRoute()
 });
 
 export function setupRouter(app: App<Element>) {

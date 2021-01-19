@@ -1,8 +1,33 @@
 import type { App } from 'vue'
-import { ElButton, ElTable, ElTableColumn, ElForm, ElFormItem } from 'element-plus'
+import {
+  ElButton,
+  ElTable,
+  ElTableColumn,
+  ElForm,
+  ElFormItem,
+  ElContainer,
+  ElHeader,
+  ElAside,
+  ElMain,
+  ElMenu,
+  ElMenuItem,
+  ElSubmenu,
+  ElMenuItemGroup
+} from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
 
 export function setupElement(app: App<Element>) {
-	app.use(ElButton).use(ElTable).use(ElForm).use(ElFormItem)
-	app.component(ElTableColumn.name, ElTableColumn)
+  app.use(ElButton)
+    .use(ElTable)
+    .use(ElForm)
+    .use(ElFormItem)
+    .use(ElContainer)
+    .use(ElHeader)
+    .use(ElAside)
+    .use(ElMain)
+    .use(ElMenu)
+    .use(ElSubmenu)
+    .use(ElMenuItem)
+    .use(ElMenuItemGroup)
+  app.component(ElTableColumn.name, ElTableColumn)
 }

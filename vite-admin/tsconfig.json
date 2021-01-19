@@ -3,26 +3,31 @@
     "target": "es2016",
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "strictFunctionTypes": false,
-    "strict": true,
+    "jsx": "preserve",
     "baseUrl": ".",
     "allowJs": true,
+    "sourceMap": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
-    "incremental": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["dom", "esnext"],
     "types": ["vite/client"],
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "incremental": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"]
     }
   },
+  "plugins": [
+    {
+      "name": "@vuedx/typescript-plugin-vue"
+    }
+  ],
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }
