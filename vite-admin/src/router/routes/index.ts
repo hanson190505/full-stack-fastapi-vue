@@ -13,7 +13,7 @@ export const BaseMenu: IMenu[] = [
         name: '/',
         component: () => import('@/views/home/index.vue'),
         meta: {
-          title: 'Home'
+          title: 'Home',
         }
       }
     ]

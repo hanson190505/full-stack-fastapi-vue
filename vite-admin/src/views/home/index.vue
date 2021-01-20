@@ -1,13 +1,27 @@
 <template>
-  <h1>Home</h1>
-  <router-link :to="{name: 'product'}">产品</router-link>
+  <basic-layout>
+    <template #mainContext>
+      <suspense>
+        <template #default>
+          <router-view/>
+        </template>
+        <template #fallback>
+          <h1>loading...</h1>
+        </template>
+      </suspense>
+    </template>
+  </basic-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import BasicLayout from '@/components/basicLayout/index.vue'
 
 export default defineComponent( {
-  name: "home"
+  name: "home",
+  components: {
+    BasicLayout
+  }
 })
 </script>
 

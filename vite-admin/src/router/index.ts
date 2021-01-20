@@ -5,7 +5,31 @@ import { createGuard } from "@/router/guard";
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: routes
+  routes: [
+    {
+      name:'login',
+      path:'/login',
+      component:() => import('@/views/login/index.vue')
+    },
+    {
+      path: "/",
+      name: '/',
+      component: () => import('@/views/home/index.vue'),
+      meta: {
+        title: 'Home'
+      },
+      children: [
+        {
+          path: "/product",
+          name: 'product',
+          component: () => import('@/views/products/index.vue'),
+          meta: {
+            title: 'Product'
+          }
+        }
+      ]
+    }
+  ]
 });
 
 export function setupRouter(app: App<Element>) {

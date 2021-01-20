@@ -1,16 +1,17 @@
 <template>
-  <basic-layout>
-    <template #mainContext>
-      <suspense>
-        <template #default>
-          <router-view/>
-        </template>
-        <template #fallback>
-          <h1>loading...</h1>
-        </template>
-      </suspense>
-    </template>
-  </basic-layout>
+<!--  <basic-layout>-->
+<!--    <template #mainContext>-->
+<!--      <suspense>-->
+<!--        <template #default>-->
+<!--          <router-view/>-->
+<!--        </template>-->
+<!--        <template #fallback>-->
+<!--          <h1>loading...</h1>-->
+<!--        </template>-->
+<!--      </suspense>-->
+<!--    </template>-->
+<!--  </basic-layout>-->
+  <router-view/>
 </template>
 
 <script lang="ts">
