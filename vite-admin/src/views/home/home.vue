@@ -3,7 +3,7 @@
     <template #mainContext>
       <suspense>
         <template #default>
-          <router-view/>
+          <router-view />
         </template>
         <template #fallback>
           <h1>loading...</h1>
@@ -15,16 +15,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import BasicLayout from '@/components/basicLayout/index.vue'
+import BasicLayout from "@/components/basicLayout/index.vue";
 
-export default defineComponent( {
+export default defineComponent({
   name: "home",
   components: {
-    BasicLayout
-  }
-})
+    BasicLayout,
+  },
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

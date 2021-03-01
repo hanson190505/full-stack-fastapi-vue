@@ -1,4 +1,4 @@
-import type { App } from 'vue'
+import type { App } from 'vue';
 import {
   ElButton,
   ElTable,
@@ -12,12 +12,16 @@ import {
   ElMenu,
   ElMenuItem,
   ElSubmenu,
-  ElMenuItemGroup
-} from 'element-plus'
-import 'element-plus/lib/theme-chalk/index.css'
+  ElMenuItemGroup,
+  ElInput,
+  ElTabs,
+  ElTabPane,
+} from 'element-plus';
+import 'element-plus/lib/theme-chalk/index.css';
 
 export function setupElement(app: App<Element>) {
-  app.use(ElButton)
+  app
+    .use(ElButton)
     .use(ElTable)
     .use(ElForm)
     .use(ElFormItem)
@@ -29,5 +33,8 @@ export function setupElement(app: App<Element>) {
     .use(ElSubmenu)
     .use(ElMenuItem)
     .use(ElMenuItemGroup)
-  app.component(ElTableColumn.name, ElTableColumn)
+    .use(ElInput)
+    .use(ElTabs)
+    .use(ElTabPane);
+  app.component(ElTableColumn.name, ElTableColumn);
 }

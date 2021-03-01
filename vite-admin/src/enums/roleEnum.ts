@@ -1,4 +1,5 @@
 export enum RoleEnum{
 	SUPER= 'super',
-	MANAGE = 'manage'
+	MANAGE = 'manage',
+	GENERAL = 'general'
 }

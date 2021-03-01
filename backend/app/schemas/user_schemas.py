@@ -1,8 +1,31 @@
+from typing import Optional, Dict, Any
+
 from pydantic import BaseModel
 
-class createUser(BaseModel):
+
+class CreateUser(BaseModel):
     name: str
-    hashed_password = Column(String(1024))
-    mail = Column(String(64), nullable=True, index=True)
-    phone = Column(String(32), nullable=True, index=True)
-    detail = Column(JSON, nullable=True)
+    password: str
+    mail: Optional[str]
+    phone: Optional[str]
+    detail: Optional[Dict]
+
+
+class UpdateUser(BaseModel):
+    id: int
+
+
+class RecordUser(BaseModel):
+    id: int
+    name: str
+    mail: str
+    phone: str
+    detail: Dict
+
+    class Config:
+        orm_mode = True
+
+
+class UserLogin(BaseModel):
+    username: str
+    password: str

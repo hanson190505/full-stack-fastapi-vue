@@ -1,7 +1,7 @@
 interface IBaseModel {
-  create_time: Date;
-  update_time: Date;
-  is_delete: boolean;
+  create_time?: Date;
+  update_time?: Date;
+  is_delete?: boolean;
 }
 
 interface ICategory extends IBaseModel {
