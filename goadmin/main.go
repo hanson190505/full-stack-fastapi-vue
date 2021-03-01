@@ -5,12 +5,14 @@ import (
 	"GoAdmin/middleware/auth"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"GoAdmin/internal/model"
 )
 
 
 func main() {
 	r := gin.Default()
 	config.InitConfig()
+	model.NewDB()
 	router := r.Group("/api/v1", auth.AuthRequired())
 	{
 		router.GET("products", getProduct)
